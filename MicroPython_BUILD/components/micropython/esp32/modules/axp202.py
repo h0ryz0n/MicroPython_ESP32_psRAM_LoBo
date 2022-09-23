@@ -312,7 +312,10 @@ class PMU(object):
         elif(mv > 3300):
             mv = 3300
         val = (mv - 1800) / 100
-        self.write_byte(AXP202_LDO24OUT_VOL, int(val))
+        prev = self.read_byte(AXP202_LDO24OUT_VOL)
+        prev &= 0x0F
+        prev = prev | (int(val) << 4)
+        self.write_byte(AXP202_LDO24OUT_VOL, int(prev))
 
     def setLDO3Voltage(self, mv):
         if(mv < 700):
