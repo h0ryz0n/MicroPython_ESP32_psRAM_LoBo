@@ -311,6 +311,7 @@ endif
 
 ifdef CONFIG_MICROPY_USE_BMA423
 LIBS_SRC_C += \
+	esp32/libs/i2c_bus/i2c_bus.c \
 	esp32/libs/bma423/bma.c \
 	esp32/libs/bma423/bma4.c \
 	esp32/libs/bma423/bma423.c \

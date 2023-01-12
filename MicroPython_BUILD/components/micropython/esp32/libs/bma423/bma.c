@@ -7,6 +7,8 @@
 static const char *TAG = "[BMA423]";
 static bma423_dev_t *bma_dev = NULL;
 
+extern esp_err_t iot_i2c_bus_cmd_begin(i2c_bus_handle_t bus, i2c_cmd_handle_t cmd, portBASE_TYPE ticks_to_wait);
+
 static esp_err_t bma_read(bma423_handle_t dev, uint8_t addr, uint8_t start_addr,
                           uint8_t read_num, uint8_t *data_buf)
 {

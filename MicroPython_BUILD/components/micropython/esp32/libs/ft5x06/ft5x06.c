@@ -17,6 +17,8 @@
 #include "esp_log.h"
 #include "string.h"
 
+extern esp_err_t iot_i2c_bus_cmd_begin(i2c_bus_handle_t bus, i2c_cmd_handle_t cmd, portBASE_TYPE ticks_to_wait);
+
 esp_err_t iot_ft5x06_read(ft5x06_handle_t dev, uint8_t start_addr,
                           uint8_t read_num, uint8_t *data_buf)
 {
