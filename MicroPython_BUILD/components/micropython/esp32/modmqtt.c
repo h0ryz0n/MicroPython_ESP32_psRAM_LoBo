@@ -900,4 +900,3 @@ const mp_obj_type_t mqtt_type = {
 };
 
 #endif
-
